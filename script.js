@@ -1,0 +1,1138 @@
+
+/* ==========================================================
+   RAMAN SHARMA — PERSONAL MARKETING PORTFOLIO
+   Design: Editorial | Vintage | Minimal
+   Fonts: Bodoni Moda + DM Sans
+========================================================== */
+
+
+/* ==========================================================
+   01. COLOUR PALETTE
+========================================================== */
+
+:root {
+    --maroon: #9C2F29;
+    --red-dark: #842720;
+    --cream: #DEC8A8;
+    --ivory: #F7F0E5;
+    --gold: #C9A77A;
+    --brown: #211915;
+    --muted: #705A4F;
+    --border: #DDC9AD;
+    --white: #FFF9F0;
+    --section-bg: #EFE2D1;
+
+    --font-display: "Bodoni Moda", Georgia, serif;
+    --font-body: "DM Sans", Arial, sans-serif;
+
+    --shadow: 0 12px 30px rgba(33, 25, 21, 0.08);
+}
+
+
+/* ==========================================================
+   02. GLOBAL RESET
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--ivory);
+    color: var(--brown);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: 0 auto;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+::selection {
+    background: var(--maroon);
+    color: var(--ivory);
+}
+
+
+/* ==========================================================
+   03. GLOBAL TYPOGRAPHY
+========================================================== */
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+}
+
+.eyebrow {
+    color: var(--maroon);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================================
+   04. NAVIGATION BAR
+========================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(247, 240, 229, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 37px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--maroon);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--maroon);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--maroon);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--maroon);
+    border: 1px solid var(--border);
+    padding: 7px 12px;
+    border-radius: 3px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   05. HOME / HERO SECTION
+========================================================== */
+
+.hero {
+    min-height: 680px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 65px;
+
+    padding-top: 85px;
+    padding-bottom: 85px;
+}
+
+.hero-content {
+    max-width: 610px;
+    animation: fadeUp 0.9s ease both;
+}
+
+.hero-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(62px, 7vw, 94px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -3px;
+    color: var(--brown);
+    margin-bottom: 22px;
+}
+
+.hero-title span {
+    display: block;
+    color: var(--maroon);
+}
+
+.hero-name {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brown);
+    margin-bottom: 5px;
+}
+
+.hero-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--maroon);
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    max-width: 520px;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   06. HERO BUTTONS
+========================================================== */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    border: 1px solid var(--maroon);
+    transition: all 0.3s ease;
+}
+
+.button-primary {
+    background: var(--maroon);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--brown);
+    border-color: var(--brown);
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    color: var(--maroon);
+    background: transparent;
+}
+
+.button-secondary:hover {
+    background: var(--cream);
+    transform: translateY(-3px);
+}
+
+.hero-footnote {
+    margin-top: 45px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   07. HERO POSTER IMAGE
+========================================================== */
+
+.hero-artwork {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    justify-self: end;
+
+    animation: fadeIn 1.2s ease both;
+    animation-delay: 0.2s;
+}
+
+.hero-poster {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid var(--cream);
+
+    box-shadow: 12px 12px 0 rgba(156, 47, 41, 0.13);
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.hero-poster:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        16px 18px 0 rgba(156, 47, 41, 0.15);
+}
+
+.hero-artwork figcaption {
+    margin-top: 17px;
+
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-align: right;
+}
+
+
+/* ==========================================================
+   08. COMMON SECTION STYLING
+========================================================== */
+
+.section {
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.section-alt {
+    background: var(--section-bg);
+}
+
+.section-heading {
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--brown);
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span {
+    color: var(--maroon);
+}
+
+.section-intro {
+    max-width: 790px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+
+/* ==========================================================
+   09. ABOUT SECTION
+========================================================== */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-lead {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.35;
+    color: var(--maroon);
+    margin-bottom: 22px;
+}
+
+.about-note {
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--maroon);
+    color: var(--cream);
+    text-align: center;
+    padding: 25px;
+}
+
+.note-number {
+    font-family: var(--font-display);
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.about-note p:last-child {
+    font-size: 11px;
+    line-height: 2;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   10. MARKETING TOOLS IMAGE
+========================================================== */
+
+.tools-visual {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.tools-image {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid var(--border);
+    padding: 8px;
+    background: var(--ivory);
+
+    box-shadow: var(--shadow);
+
+    transition: transform 0.4s ease;
+}
+
+.tools-image:hover {
+    transform: scale(1.015);
+}
+
+.tools-visual p {
+    margin-top: 17px;
+
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================================
+   11. SKILLS CARDS
+========================================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.info-card {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    padding: 32px 27px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(33, 25, 21, 0.08);
+}
+
+.card-label {
+    color: var(--maroon);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: var(--maroon);
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 13px;
+}
+
+.info-card > p:not(.card-label) {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* Skill tags */
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.skill-list span {
+    padding: 7px 12px;
+
+    background: var(--cream);
+    color: var(--maroon);
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   12. EXPERIENCE SECTION
+========================================================== */
+
+.experience-card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 35px;
+
+    padding: 40px 0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-number {
+    width: 140px;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 15px;
+}
+
+.experience-logo {
+    max-width: 100%;
+    max-height: 85px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.experience-details h3 {
+    font-family: var(--font-display);
+    font-size: 38px;
+    color: var(--brown);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.experience-details h4 {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--maroon);
+    font-weight: 700;
+}
+
+.card-meta {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 12px 0;
+}
+
+.experience-description {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   13. PROJECTS SECTION
+========================================================== */
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 40px;
+    align-items: center;
+
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    padding: 40px;
+}
+
+.project-content h3 {
+    font-family: var(--font-display);
+    font-size: 39px;
+    font-weight: 600;
+    color: var(--maroon);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.project-content > p:not(.card-label) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* My Coffee Co. image */
+
+.project-image {
+    width: 100%;
+    height: 310px;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin-bottom: 24px;
+
+    border: 1px solid var(--border);
+
+    transition: transform 0.4s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.015);
+}
+
+
+/* Project index block */
+
+.project-index {
+    min-height: 190px;
+
+    background: var(--maroon);
+    color: var(--cream);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.project-index span {
+    font-family: var(--font-display);
+    font-size: 95px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.project-index p {
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   14. EDUCATION SECTION
+========================================================== */
+
+.education-card {
+    max-width: 850px;
+
+    padding: 40px;
+
+    border-left: 4px solid var(--maroon);
+
+    background: var(--section-bg);
+}
+
+.education-card h3 {
+    font-family: var(--font-display);
+
+    font-size: clamp(32px, 4vw, 47px);
+    line-height: 1.2;
+
+    color: var(--maroon);
+    margin: 15px 0;
+}
+
+.education-degree {
+    color: var(--brown);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   15. CONTACT SECTION
+========================================================== */
+
+.contact-section {
+    background: var(--section-bg);
+}
+
+.contact-panel {
+    background: var(--maroon);
+    color: var(--ivory);
+
+    min-height: 340px;
+    padding: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-content {
+    max-width: 620px;
+}
+
+.contact-content .eyebrow {
+    color: var(--cream);
+}
+
+.contact-panel h2 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 59px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--white);
+}
+
+.contact-panel h2 span {
+    color: var(--cream);
+}
+
+.contact-content > p:last-child {
+    margin-top: 22px;
+    color: var(--cream);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 130px;
+}
+
+.contact-links a {
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--gold);
+}
+
+
+/* ==========================================================
+   16. FOOTER
+========================================================== */
+
+.footer {
+    background: var(--brown);
+    padding: 25px 0;
+    color: var(--cream);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.back-to-top {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--cream);
+}
+
+.back-to-top:hover {
+    color: var(--gold);
+}
+
+
+/* ==========================================================
+   17. TEXT AND IMAGE ANIMATIONS
+========================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.hero-footnote {
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+.hero-artwork:hover .hero-poster {
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.info-card {
+    animation: fadeUp 0.7s ease both;
+}
+
+
+/* ==========================================================
+   18. ACCESSIBILITY AND KEYBOARD FOCUS
+========================================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+
+/* Respect visitors who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* ==========================================================
+   19. TABLET RESPONSIVENESS
+========================================================== */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero-title {
+        font-size: 68px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   20. MOBILE RESPONSIVENESS
+========================================================== */
+
+@media (max-width: 760px) {
+
+    /* Navigation */
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        right: 5%;
+
+        width: 230px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+
+        padding: 24px;
+
+        background: var(--ivory);
+        border: 1px solid var(--border);
+
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+    .hero-title {
+        font-size: clamp(55px, 12vw, 75px);
+    }
+
+    .hero-artwork {
+        max-width: 440px;
+        justify-self: center;
+    }
+
+    .hero-name {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+
+    /* About */
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-note {
+        min-height: 200px;
+    }
+
+
+    /* Skills */
+
+    .tools-visual {
+        margin-bottom: 35px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Experience */
+
+    .experience-card {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 30px 0;
+    }
+
+    .experience-number {
+        width: 130px;
+        height: 105px;
+    }
+
+
+    /* Projects */
+
+    .project-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .project-image {
+        height: auto;
+        max-height: 390px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-index {
+        min-height: 150px;
+    }
+
+    .project-content h3 {
+        font-size: 34px;
+    }
+
+
+    /* Education */
+
+    .education-card {
+        padding: 28px;
+    }
+
+
+    /* Contact */
+
+    .contact-panel {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 35px 25px;
+        gap: 35px;
+    }
+
+    .contact-panel h2 {
+        font-size: 43px;
+    }
+
+
+    /* Footer */
+
+    .footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+}
+
+
+/* ==========================================================
+   21. SMALL MOBILE SCREENS
+========================================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 91%;
+    }
+
+    .hero-title {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .contact-panel h2 {
+        font-size: 36px;
+    }
+
+}
